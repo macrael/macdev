@@ -1,0 +1,61 @@
+* create a profile installer
+	* copys bash_profile into the right place
+
+
+
+HOW TO DO IT
+============
+
+* create a script runner?
+	* should this all just be a bash script or should it be a python script?
+	* python based on a config file seems the most robust
+
+* everything needs to be re-runnable. 
+
+
+
+
+THINGS TO DO
+============
+
+mkdir bin
+mkdir code
+mkdir src
+
+MAC APP STORE (manual forever?)
+install 1Password
+install Slack
+install omnifocus
+install acorn
+install harvest
+install Xcode
+
+ONLINE
+install spotify
+
+
+SETUP EDITOR
+* VIM
+	* mvim
+* set caps lock -> ctl in settings
+* MacVim: http://macvim-dev.github.io/macvim/
+	* ctl-p
+	* everything from that dude
+
+
+CONFIG BROWASER
+* 1password extension
+* content blocker?
+
+turn on auto update
+
+
+CONFIG FILES
+* .bash_profile
+
+MY SOFTWARE
+* webnull
+
+
+BREW
+* I should have a config file that lists what I want to be installed
