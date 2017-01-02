@@ -1,5 +1,7 @@
-* create a profile installer
-	* copys bash_profile into the right place
+x create a profile installer
+	x copys bash_profile into the right place
+x create my default directories
+* setup vim
 
 
 
@@ -14,13 +16,12 @@ HOW TO DO IT
 
 
 
-
 THINGS TO DO
 ============
 
-mkdir bin
-mkdir code
-mkdir src
+x mkdir bin
+x mkdir code
+mkdir src?
 
 MAC APP STORE (manual forever?)
 install 1Password
@@ -37,7 +38,8 @@ install spotify
 SETUP EDITOR
 * VIM
 	* mvim
-* set caps lock -> ctl in settings
+* set caps lock -> ctl in settings -- trying mapping it to esc for now
+	* is there a test for this? so I can prompt to do it or not
 * MacVim: http://macvim-dev.github.io/macvim/
 	* ctl-p
 	* everything from that dude
@@ -56,6 +58,15 @@ CONFIG FILES
 MY SOFTWARE
 * webnull
 
+KEY MANAGEMENT
+* GITHUB key
+* get my private key?
+
+* SET GIT NAME
+
+SSH CONFIG
+* hostsnames for my servers
+* keys for them?
 
 BREW
 * I should have a config file that lists what I want to be installed
