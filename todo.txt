@@ -1,9 +1,17 @@
 x create a profile installer
 	x copys bash_profile into the right place
 x create my default directories
-* setup vim
+x setup vim
+	x plugins
+	x colorscheme
+x install brew
+* install brew pubs:
+	* mas
+	* python?
 
 
+SOMEDAY
+* brew more silent
 
 HOW TO DO IT
 ============
@@ -23,6 +31,7 @@ x mkdir bin
 x mkdir code
 mkdir src?
 
+
 MAC APP STORE (manual forever?)
 install 1Password
 install Slack
@@ -33,7 +42,9 @@ install Xcode
 
 ONLINE
 install spotify
+install mvim?
 
+isntall Dropbox?
 
 SETUP EDITOR
 * VIM
@@ -54,6 +65,7 @@ turn on auto update
 
 CONFIG FILES
 * .bash_profile
+* .vimrc
 
 MY SOFTWARE
 * webnull

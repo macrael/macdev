@@ -1,2 +1,20 @@
 execute pathogen#infect()
 
+syntax enable
+set background=dark
+colorscheme solarized
+set guifont=Monaco:h14
+
+let mapleader=","
+
+" clear hilighting
+nnoremap <leader>/ :noh<CR>
+
+" re-source vimrc
+map <leader>v :so ~/.vimrc<CR>
+
+" hilight everything
+set hlsearch
+
+" MRU first
+let ctrlp_cmd = 'CtrlPMRU'
