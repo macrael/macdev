@@ -1,11 +1,14 @@
 execute pathogen#infect()
 
 syntax enable
-set background=dark
-colorscheme solarized
-set guifont=Monaco:h14
+if has("gui_running")
+    set background=dark
+    colorscheme solarized
+    set guifont=Monaco:h14
+endif "guirunning
 
 let mapleader=","
+set cmdheight=2 " This is on trial
 
 " clear hilighting
 nnoremap <leader>/ :noh<CR>
@@ -18,3 +21,8 @@ set hlsearch
 
 " MRU first
 let ctrlp_cmd = 'CtrlPMRU'
+
+" Spaces
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+
+set hidden

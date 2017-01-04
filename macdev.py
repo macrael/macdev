@@ -7,6 +7,8 @@ import subprocess
 
 MACDEV_PATH = os.path.dirname(os.path.realpath(__file__))
 DOTFILES_DIR = "dotfiles"
+CODE_DIR = os.path.expanduser("~/code")
+BIN_DIR = os.path.expanduser("~/bin")
 
 def silent_call(cmd):
     with open(os.devnull, 'w') as devnull:
@@ -38,7 +40,7 @@ def remake_dir(path):
 def mk_dirs():
     print("creating some standard directories")
     # create a few standard directories
-    basic_dirs = ["~/bin", "~/code"]
+    basic_dirs = [BIN_DIR, CODE_DIR, "~/.ssh"]
     for bdir in basic_dirs:
         remake_dir(bdir)
 
@@ -61,6 +63,15 @@ def install_pathogen():
         with open(pathogen_dest, "w") as pathogen_file:
             pathogen_file.write(pathogen.read())
 
+def git_clone(git_url, dest_dir):
+    dest_extractor = r'/([^/]+).git'
+    dest_name = re.search(dest_extractor, git_url).group(1)
+    dest = os.path.join(os.path.expanduser(dest_dir), dest_name)
+    if not os.path.isdir(dest):
+        git_cmd = ["git", "clone", git_url, dest]
+        silent_call(git_cmd)
+    return dest
+
 def vim_plugins():
     print("configuring vim")
     vim_dirs = ["~/.vim/autoload", "~/.vim/bundle"]
@@ -76,14 +87,19 @@ def vim_plugins():
             "git://github.com/altercation/vim-colors-solarized.git"
             ]
 
-    dest_extractor = r'/([^/]+).git'
+    plugin_dir = "~/.vim/bundle/"
     for plugin_url in plugin_urls:
-        dest_name = re.search(dest_extractor, plugin_url).group(1)
-        dest = os.path.expanduser("~/.vim/bundle/" + dest_name)
-        if not os.path.isdir(dest):
-            git_cmd = ["git", "clone", plugin_url, dest]
-            silent_call(git_cmd)
-    
+        git_clone(plugin_url, plugin_dir)
+
+def install_my_tools():
+    tools = [
+            {"url": "git@github.com:macrael/webnull.git", "setup": "setup.py"}
+            ]
+
+    for tool in tools:
+        path = git_clone(tool["url"], CODE_DIR)
+        setup_path = os.path.join(path, tool["setup"])
+        subprocess.check_call([setup_path])
 
 if __name__ == "__main__":
     print("we on it")
@@ -92,4 +108,5 @@ if __name__ == "__main__":
     mk_dirs()
     copy_dotfiles()
     vim_plugins()
+    install_my_tools()
 

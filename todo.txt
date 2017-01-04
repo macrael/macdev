@@ -5,6 +5,9 @@ x setup vim
 	x plugins
 	x colorscheme
 x install brew
+x vim tabs -> spaces
+x install my thing
+    * make the thing run itself in install
 * install brew pubs:
 	* mas
 	* python?
@@ -23,9 +26,12 @@ HOW TO DO IT
 * everything needs to be re-runnable. 
 
 
-
 THINGS TO DO
 ============
+* What has to be done before this script can be run?
+    * setup github?
+    * I'd like for ssh config stuff to be done right
+        * got to start writing in stuff in my files though. Ugh. 
 
 x mkdir bin
 x mkdir code
@@ -43,6 +49,7 @@ install Xcode
 ONLINE
 install spotify
 install mvim?
+install Fluid, config emails
 
 isntall Dropbox?
 
