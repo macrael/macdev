@@ -27,5 +27,5 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 set hidden
 
-" Don't select anything when you hit * in visual mode
-xnoremap * <esc>*
+" Search for evereything selected in visual mode correctly
+vnoremap * y/<C-R>"<CR>
