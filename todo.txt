@@ -37,6 +37,9 @@ x mkdir bin
 x mkdir code
 mkdir src?
 
+ENable all my internet accounts
+* this means activating delegation for google stuff
+
 
 MAC APP STORE (manual forever?)
 install 1Password
