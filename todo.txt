@@ -80,6 +80,10 @@ CONFIG FILES
 MY SOFTWARE
 * webnull
 
+OTHER BUILT SOFTWARE
+* install stuff that has a make file?
+    * pam-touchID https://github.com/Reflejo/pam-touchID
+
 KEY MANAGEMENT
 * GITHUB key
 * get my private key?
@@ -92,3 +96,8 @@ SSH CONFIG
 
 BREW
 * I should have a config file that lists what I want to be installed
+
+Account Config
+* desktop background
+* user image
+

@@ -84,7 +84,9 @@ def vim_plugins():
             "git://github.com/tpope/vim-surround.git",
             "git://github.com/tpope/vim-commentary.git",
             "git://github.com/ctrlpvim/ctrlp.vim.git",
-            "git://github.com/altercation/vim-colors-solarized.git"
+            "git://github.com/altercation/vim-colors-solarized.git",
+            "git://github.com/elixir-lang/vim-elixir.git",
+            "git://github.com/pangloss/vim-javascript.git"
             ]
 
     plugin_dir = "~/.vim/bundle/"
