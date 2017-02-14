@@ -19,8 +19,8 @@ map <leader>v :so ~/.vimrc<CR>
 " hilight everything
 set hlsearch
 
-" MRU first
-let ctrlp_cmd = 'CtrlPMRU'
+" All together now
+let ctrlp_cmd = 'CtrlPMixed'
 
 " Spaces
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
