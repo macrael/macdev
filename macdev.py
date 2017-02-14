@@ -32,6 +32,15 @@ def install_brew():
         brew_cmd = ["/usr/bin/ruby", "-e", brew_script.read()]
         subprocess.call(brew_cmd)
 
+def install_brew_pkgs():
+    brew_pkgs = [ "tmux",
+                  "reattach-to-user-namespace"]
+    for pkg in brew_pkgs:
+        check_cmd = ["brew", "ls", "--versions", pkg]
+        if subprocess.call(check_cmd) == 1:
+            brew_cmd = ["brew", "install", pkg]
+            subprocess.call(brew_cmd)
+
 def remake_dir(path):
     full_path = os.path.expanduser(path)
     if not os.path.isdir(full_path):
@@ -106,6 +115,7 @@ if __name__ == "__main__":
     print("we on it")
     install_xcode_tools()
     install_brew()
+    install_brew_pkgs()
     mk_dirs()
     copy_dotfiles()
     vim_plugins()

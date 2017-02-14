@@ -41,6 +41,12 @@ ENable all my internet accounts
 * this means activating delegation for google stuff
 
 
+TMERINAL?
+* iTerm profile??
+    * right now has colors and opt-leftarrow init
+
+
+
 MAC APP STORE (manual forever?)
 install 1Password
 install Slack
