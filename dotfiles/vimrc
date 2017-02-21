@@ -25,6 +25,9 @@ let ctrlp_cmd = 'CtrlPMixed'
 " Spaces
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascript.jsx setlocal shiftwidth=2 tabstop=2
+
 set hidden
 
 " Search for evereything selected in visual mode correctly
