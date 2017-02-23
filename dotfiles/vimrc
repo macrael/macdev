@@ -10,6 +10,8 @@ endif "guirunning
 let mapleader=","
 set cmdheight=2 " This is on trial
 
+:set wrap linebreak nolist
+
 " clear hilighting
 nnoremap <leader>/ :noh<CR>
 
