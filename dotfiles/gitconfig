@@ -3,6 +3,4 @@
     email = macrae.linton@gmail.com
 
 [alias]
-    pushcur = ! git branch | grep *
-    branchprune = "! git branch --merged | egrep -v \"(^\\*|master)\""
-    pushcurs = ! git branch | grep *
+    branchprune = "! git branch --merged | egrep -v \"(^\\*|master)\" | xargs git branch -d"
