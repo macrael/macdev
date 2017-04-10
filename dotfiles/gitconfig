@@ -1,3 +1,7 @@
+[push]
+    default = current
+    
+
 [user]
     name = MacRae Linton
     email = macrae.linton@gmail.com
