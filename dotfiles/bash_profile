@@ -1,3 +1,6 @@
-PATH=~/bin:$PATH
+PATH=~/bin:~/code/go/bin:$PATH
 
 eval "$(rbenv init -)"
+export GOPATH=~/code/go/
+
+bind 'set mark-symlinked-directories on'
