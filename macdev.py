@@ -17,7 +17,7 @@ def silent_call(cmd):
 
 def install_xcode_tools():
     xcode_cmd = ["xcode-select", "--install"]
-    retcode = silent_call(xcode_cmd)    
+    retcode = silent_call(xcode_cmd)
     if retcode == 0:
         print("rerun after you've installed the xcode tools")
         exit(0)
@@ -103,13 +103,11 @@ def vim_plugins():
 
 def install_my_tools():
     tools = [
-            {"url": "git@github.com:macrael/webnull.git", "setup": "setup.py"}
+            {"url": "git@github.com:macrael/webnull.git"}
             ]
 
     for tool in tools:
         path = git_clone(tool["url"], CODE_DIR)
-        setup_path = os.path.join(path, tool["setup"])
-        subprocess.check_call([setup_path])
 
 if __name__ == "__main__":
     print("we on it")
@@ -120,4 +118,3 @@ if __name__ == "__main__":
     copy_dotfiles()
     vim_plugins()
     install_my_tools()
-

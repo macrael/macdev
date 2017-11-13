@@ -7,4 +7,4 @@
     email = macrae.linton@gmail.com
 
 [alias]
-    branchprune = "! git branch --merged | egrep -v \"(^\\*|master)\" | xargs git branch -d"
+    branchprune = "! git branch --merged master | egrep -v \"(^\\*|master)\" | xargs git branch -d"

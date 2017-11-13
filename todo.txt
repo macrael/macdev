@@ -8,9 +8,17 @@ x install brew
 x vim tabs -> spaces
 x install my thing
     * make the thing run itself in install
+* the setup.py thing is no good now.
 * install brew pubs:
 	* mas
 	* python?
+* Save all my sublime text configs
+        * just put these files in our dir, symmlink them indiviudally
+	* keymap
+	* mousemap
+	* settings
+	* plugins!!
+	* Do a test for the installed plugins list where we blow away A_S and see if we can reinstall it.
 
 
 SOMEDAY
@@ -23,7 +31,7 @@ HOW TO DO IT
 	* should this all just be a bash script or should it be a python script?
 	* python based on a config file seems the most robust
 
-* everything needs to be re-runnable. 
+* everything needs to be re-runnable.
 
 
 THINGS TO DO
@@ -31,7 +39,7 @@ THINGS TO DO
 * What has to be done before this script can be run?
     * setup github?
     * I'd like for ssh config stuff to be done right
-        * got to start writing in stuff in my files though. Ugh. 
+        * got to start writing in stuff in my files though. Ugh.
 
 x mkdir bin
 x mkdir code
