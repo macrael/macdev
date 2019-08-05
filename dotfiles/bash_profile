@@ -1,6 +1,8 @@
-PATH=~/bin:~/code/go/bin:$PATH:/Library/Developer/CommandLineTools/usr/bin
+PATH=~/bin:~/code/go/bin:~/.cargo/bin:$PATH:/Library/Developer/CommandLineTools/usr/bin
 
-export GOPATH=~/code/go/
+export GOPATH=~/code/go
+
+PS1="\n\[\033[32m\]\W\[\033[00m\] \$ " # cwd and a $ is all
 
 bind 'set mark-symlinked-directories on'
 
@@ -16,6 +18,7 @@ PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
 eval "$(pyenv init -)"
 eval "$(rbenv init -)"
+eval "$(direnv hook bash)"
 
 # added by Anaconda3 4.4.0 installer
 #export PATH="/Users/macrael/anaconda/bin:$PATH"
@@ -24,3 +27,11 @@ eval "$(rbenv init -)"
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
+alias notify="afplay /System/Library/Sounds/Ping.aiff -v 2"
+
+alias mymovego="cd $GOPATH/src/github.com/transcom/mymove"
+alias equipgo="cd $GOPATH/src/github.com/18F/e-QIP-prototype"
+alias nitslgo="cd ~/ccode/DISA/nitsl-root/src/github.com/18F/e-QIP-prototype"
+alias nitsl="sudo openconnect nerve-b.mitre.org -u macrael --authgroup NERVE-Basic"
+
+export PATH="$HOME/.cargo/bin:$PATH"

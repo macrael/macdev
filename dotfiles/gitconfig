@@ -1,10 +1,15 @@
 [push]
-    default = current
-    
+  default = current
 
 [user]
     name = MacRae Linton
-    email = macrae.linton@gmail.com
+    email = 55759+macrael@users.noreply.github.com
 
 [alias]
-    branchprune = "! git branch --merged master | egrep -v \"(^\\*|master)\" | xargs git branch -d"
+    branchprune = "! git branch --merged master | egrep -v '(^\\*|master|develop)' | xargs git branch -d && git remote prune origin"
+    branchpruned = "! git branch --merged develop | egrep -v '(^\\*|master|develop)' | xargs git branch -d && git remote prune origin"
+    pushu = "! git push -u origin $(git rev-parse --abbrev-ref HEAD)"
+    tmpcmt = "! git add . && git commit -anm \"TMPCMT\""
+    untmp = "! if [ \"$(git log -1 --pretty=%B)\" = \"TMPCMT\" ]; then git reset HEAD^; else echo \"NO TMPCMT!\"; fi"
+[url "https://github.com/"]
+	insteadOf = git://github.com/
