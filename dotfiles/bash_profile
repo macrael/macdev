@@ -27,11 +27,19 @@ eval "$(direnv hook bash)"
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
+#Enable SSH Key on Yubikey Device
+# killall gpg-agent
+# killall ssh-agent
+# eval $( gpg-agent --daemon --enable-ssh-support )
+# export GPG_TTY=$(tty)
+
+
 alias notify="afplay /System/Library/Sounds/Ping.aiff -v 2"
 
 alias mymovego="cd $GOPATH/src/github.com/transcom/mymove"
 alias equipgo="cd $GOPATH/src/github.com/18F/e-QIP-prototype"
-alias nitslgo="cd ~/ccode/DISA/nitsl-root/src/github.com/18F/e-QIP-prototype"
+alias nitslgo="cd ~/ccode/nitsl-root/src/github.com/18F/e-QIP-prototype"
 alias nitsl="sudo openconnect nerve-b.mitre.org -u macrael --authgroup NERVE-Basic"
 
 export PATH="$HOME/.cargo/bin:$PATH"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

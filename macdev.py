@@ -33,8 +33,7 @@ def install_brew():
         subprocess.call(brew_cmd)
 
 def install_brew_pkgs():
-    brew_pkgs = [ "tmux",
-                  "reattach-to-user-namespace"]
+    brew_pkgs = [ "nvm", "rbenv", "pyenv", "direnv" ]
     for pkg in brew_pkgs:
         check_cmd = ["brew", "ls", "--versions", pkg]
         if subprocess.call(check_cmd) == 1:

@@ -21,6 +21,21 @@ x install my thing
 	* Do a test for the installed plugins list where we blow away A_S and see if we can reinstall it.
 
 
+* plugins for VSCODE 2020
+	* Better TOML
+	* Code Spell Checker
+	* ESLint
+	* Github Pull Requests and Issues
+	* Go
+	* Graphql for VSCODE
+	* Prettier
+	* Prettify JSON
+	* python
+	* Quick and simple text selection
+	* Rust
+	* Terraform
+	* XML
+
 SOMEDAY
 * brew more silent
 
