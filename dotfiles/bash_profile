@@ -41,5 +41,5 @@ alias equipgo="cd $GOPATH/src/github.com/18F/e-QIP-prototype"
 alias nitslgo="cd ~/ccode/nitsl-root/src/github.com/18F/e-QIP-prototype"
 alias nitsl="sudo openconnect nerve-b.mitre.org -u macrael --authgroup NERVE-Basic"
 
-export PATH="$HOME/.cargo/bin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source "$HOME/.cargo/env"

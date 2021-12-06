@@ -4,20 +4,26 @@
 [user]
 	name = MacRae Linton
 	email = macrael@truss.works
-	signingkey = F349CB3BDB45A87B
+	# signingkey = F349CB3BDB45A87B
 
 [alias]
-    branchprune = "! git branch --merged master | egrep -v '(^\\*|master|develop)' | xargs git branch -d && git remote prune origin"
-    branchpruned = "! git branch --merged develop | egrep -v '(^\\*|master|develop)' | xargs git branch -d && git remote prune origin"
+	branchprune = '!git-branch-prune'
+
+	# branchpruneold = "! git checkout -q master && git for-each-ref refs/heads/ '--format=%(refname:short' | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == '-'* ]] && git branch -D $branch; done && git remote prune origin"
+
+    # branchprunez = "! git branch --merged main | egrep -v '(^\\*|master|develop|main)' | xargs git branch -d && git remote prune origin"
+    # branchpruneo = "! git branch --merged master | egrep -v '(^\\*|master|develop|main)' | xargs git branch -d && git remote prune origin"
+    # branchpruned = "! git branch --merged develop | egrep -v '(^\\*|master|develop|main)' | xargs git branch -d && git remote prune origin"
     pushu = "! git push -u origin $(git rev-parse --abbrev-ref HEAD)"
     tmpcmt = "! git add . && git -c commit.gpgsign=false commit -anm \"TMPCMT\""
     untmp = "! if [ \"$(git log -1 --pretty=%B)\" = \"TMPCMT\" ]; then git reset HEAD^; else echo \"NO TMPCMT!\"; fi"
+	whatho = "! git checkout -q main && git for-each-ref refs/heads/ '--format=%(refname:short)' | while read branch; do mergeBase= && [[  == '-'* ]] && git branch -D ; done && git remote prune origin"
 [url "https://github.com/us-dod-saber/"]
 	insteadOf = git://github.com/us-dod-saber/
 [http]
 	sslVerify = true
-[commit]
-	gpgsign = true
+# [commit]
+	# gpgsign = true
 [pager]
 	branch = false
 [merge]
@@ -26,3 +32,7 @@
 	noprefix = true
 [url "ssh://git@github.com/us-dod-saber/"]
 	insteadOf = https://github.com/us-dod-saber/
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
