@@ -6,7 +6,9 @@ import urllib2
 import subprocess
 
 MACDEV_PATH = os.path.dirname(os.path.realpath(__file__))
-DOTFILES_DIR = "dotfiles"
+MACDEV_DOTFILES_DIR = "dotfiles"
+MACDEV_SUBLIME_PREFS_DIR = "sublime"
+SUBLIME_PREFS_DIR = "~/Library/Application Support/Sublime Text 3/Packages/User/"
 CODE_DIR = os.path.expanduser("~/code")
 BIN_DIR = os.path.expanduser("~/bin")
 
@@ -54,11 +56,22 @@ def mk_dirs():
 
 def copy_dotfiles():
     print("copying all dotfiles")
-    dotfile_dir = os.path.join(MACDEV_PATH, DOTFILES_DIR)
+    dotfile_dir = os.path.join(MACDEV_PATH, MACDEV_DOTFILES_DIR)
     dotfiles = os.listdir(dotfile_dir)
     for dotfile in dotfiles:
         ln_src = os.path.join(dotfile_dir, dotfile)
         ln_dest = os.path.expanduser("~/." + dotfile)
+        if os.path.isfile(ln_dest):
+            os.remove(ln_dest)
+        os.symlink(ln_src, ln_dest)
+
+def copy_sublime_prefs():
+    print("copying sublime prefs")
+    dotfile_dir = os.path.join(MACDEV_PATH, MACDEV_SUBLIME_PREFS_DIR)
+    dotfiles = os.listdir(dotfile_dir)
+    for dotfile in dotfiles:
+        ln_src = os.path.join(dotfile_dir, dotfile)
+        ln_dest = os.path.expanduser(SUBLIME_PREFS_DIR + dotfile)
         if os.path.isfile(ln_dest):
             os.remove(ln_dest)
         os.symlink(ln_src, ln_dest)
@@ -115,5 +128,6 @@ if __name__ == "__main__":
     # install_brew_pkgs()
     mk_dirs()
     copy_dotfiles()
+    copy_sublime_prefs()
     # vim_plugins()
     install_my_tools()
