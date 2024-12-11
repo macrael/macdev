@@ -1,7 +1,7 @@
 export GOPATH=~/code/go
 export GO111MODULE=on
 
-export PATH=$PATH:~/code/go/bin:./bin:./node_modules/.bin/:~/bin
+export PATH=$PATH:~/code/go/bin:./bin:./node_modules/.bin/:~/bin:/opt/homebrew/bin
 
 eval "$(direnv hook zsh)"
 
@@ -17,6 +17,7 @@ eval "$(direnv hook zsh)"
 
 alias equipgo="cd $GOPATH/src/github.com/18F/e-QIP-prototype"
 alias notify="afplay /System/Library/Sounds/Ping.aiff -v 2"
+alias mcr="cd ~/ccode/mc-review/managed-care-review"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
