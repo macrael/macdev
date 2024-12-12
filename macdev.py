@@ -2,7 +2,7 @@
 
 import os
 import re
-import urllib2
+import urllib.request
 import subprocess
 
 MACDEV_PATH = os.path.dirname(os.path.realpath(__file__))
@@ -27,10 +27,10 @@ def install_xcode_tools():
         print("xcode tools like git are installed")
 
 def install_brew():
-    if not os.path.isfile("/usr/local/bin/brew"):
+    if not os.path.isfile("/opt/homebrew/bin/brew"):
         print("installing brew")
         brew_url = "https://raw.githubusercontent.com/Homebrew/install/master/install"
-        brew_script = urllib2.urlopen(brew_url)
+        brew_script = urllib.request.urlopen(brew_url)
         brew_cmd = ["/usr/bin/ruby", "-e", brew_script.read()]
         subprocess.call(brew_cmd)
 
@@ -80,7 +80,7 @@ def install_pathogen():
     pathogen_dest = os.path.expanduser("~/.vim/autoload/pathogen.vim")
     if not os.path.isfile(pathogen_dest):
         pathogen_url = "https://tpo.pe/pathogen.vim"
-        pathogen = urllib2.urlopen(pathogen_url)
+        pathogen = urllib.request.urlopen(pathogen_url)
         with open(pathogen_dest, "w") as pathogen_file:
             pathogen_file.write(pathogen.read())
 
